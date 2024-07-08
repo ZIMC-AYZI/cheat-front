@@ -1,0 +1,44 @@
+<div class="article-create">
+  <div class="article-create__content">
+    <article>
+      <header>
+        <textarea appDynamicTextArea
+                  [textFormControl]="titleControl"
+                  [rows]="3"
+                  [formControl]="titleControl"
+                  [placeholder]="'Заголовок Статьи'"
+                  class="article-create__content-section-textarea article-create__content-textarea article-create__content-textarea--head-title"></textarea>
+
+        <textarea appDynamicTextArea
+                  [textFormControl]="descriptionControl"
+                  [rows]="3"
+                  [formControl]="descriptionControl"
+                  [placeholder]="'Описание Статьи'"
+                  class="article-create__content-section-textarea article-create__content-textarea article-create__content-textarea--head-description"></textarea>
+      </header>
+      @for (sectionGroup of getFormGroups; track index; let index = $index) {
+        <section class="article-create__content-section">
+          <textarea appDynamicTextArea
+                    [textFormControl]="getControl('title', sectionGroup)"
+                    [rows]="3"
+                    [formControl]="getControl('title', sectionGroup)"
+                    [placeholder]="'Заголовок секции'"
+                    class="article-create__content-section-title article-create__content-textarea"></textarea>
+          <textarea appDynamicTextArea
+                    [textFormControl]="getControl('title', sectionGroup)"
+                    [rows]="3"
+                    [formControl]="getControl('description', sectionGroup)"
+                    [placeholder]="'описание'"
+                    class="article-create__content-section-description article-create__content-textarea"></textarea>
+        </section>
+      }
+
+      <button (click)="createNewSection()" class="article-create__content-section__button">Добавить секцию +</button>
+
+      <footer>
+        <p>Автор: Oleksandr Zaitsev, Socol Denis, Vladimir Kapshuk, Kostiv Maksym, Edhar Aeropetov</p>
+        <p>Опубликовано 5 июля 2024 года</p>
+      </footer>
+    </article>
+  </div>
+</div>

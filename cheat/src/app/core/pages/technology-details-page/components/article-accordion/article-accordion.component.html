@@ -1,0 +1,17 @@
+<div class="accordion">
+  <div class="accordion-item" [ngClass]="{
+  disabled: article._id === openedContentId && !article.childArticles.length,
+  active: article._id === openedContentId
+  }" (click)="openTree()">
+    <p class="accordion-item__title">{{ article.title }} {{ getArticleIcon }}</p>
+  </div>
+
+  @if (showTree) {
+    @for (childArticle of article.childArticles; track childArticle._id) {
+      <app-article-accordion (openArticleChild)="emitArticleContent(childArticle)"
+                             [openedContentId]="openedContentId"
+                             [article]="childArticle"></app-article-accordion>
+    }
+  }
+
+</div>

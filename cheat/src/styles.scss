@@ -1,0 +1,18 @@
+@import "assets/fonts/stylesheet.css";
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  font-family: "Source Code Pro", sans-serif;
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}

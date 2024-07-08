@@ -1,0 +1,9 @@
+<div class="technology">
+    @for (technology of technologies$ | async; track technology._id) {
+      <div class="technology-card" (click)="openArticle(technology._id)">
+        <div class="technology-card__header">
+          <p class="technology-card__title">{{ technology.title }}</p>
+        </div>
+      </div>
+    }
+</div>

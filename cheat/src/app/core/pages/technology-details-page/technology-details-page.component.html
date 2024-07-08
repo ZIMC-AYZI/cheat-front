@@ -1,0 +1,11 @@
+<div class="technology-details">
+  <div class="technology-details__sidepanel">
+    <app-article-accordion *ngIf="article"
+                           (openArticleChild)="openArticleChild($event)"
+                           [openedContentId]="openedContentId"
+                           [article]="article"></app-article-accordion>
+  </div>
+
+  <div #content class="technology-details__content">
+  </div>
+</div>

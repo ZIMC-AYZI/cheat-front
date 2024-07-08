@@ -1,0 +1,22 @@
+.accordion {
+  padding: 20px;
+
+  &-item {
+    padding: 0 20px;
+    cursor: pointer;
+
+    &.disabled {
+      pointer-events: none;
+    }
+
+    &.active {
+      & .accordion-item__title {
+        color: #9c88ff;
+      }
+    }
+
+    &__title {
+      color: #22282a;
+    }
+  }
+}
